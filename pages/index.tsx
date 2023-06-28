@@ -1,10 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { Box, Flex, Grid, GridItem, Heading } from '@chakra-ui/react'
+import { Box, Container, Flex, Grid, GridItem, Heading } from '@chakra-ui/react'
 import { log } from 'console'
 import { GetServerSidePropsContext } from 'next'
 import {Button} from '@chakra-ui/react'
@@ -12,7 +7,9 @@ import Header from '../components/Header';
 import TopBar from '@/components/topBar'
 import {Categories} from '@/models/Categories'
 import CategoriesHome from '@/components/Categories'
-
+import Middleritem from '@/components/Middleritem'
+import {BsTruck, BsCcCircle} from 'react-icons/bs'
+import {TfiReload} from 'react-icons/tfi'
 
 type Product = {
   id: number;
@@ -38,11 +35,18 @@ export default function Home({products, categories}: Props) {
     <main>
       <TopBar/>
       <Header/>
-      <CategoriesHome categories= {categories}></CategoriesHome>
+      <Container size="lg">
+        <CategoriesHome categories= {categories}></CategoriesHome>
+        <Flex justifyContent='space-between' margin='2rem 0'>
+          <Middleritem title='Free Shipping' content='On All UA order or order above $100' icon={<BsTruck size={40}/>}/>
+          <Middleritem title='Nicolas Mingorance' content='On All UA order or order above $100' icon={<TfiReload size={40}/>}/>
+          <Middleritem title='Golazo Messi' content='On All UA order or order above $100' icon={<BsCcCircle size={40}/>}/> 
+        </Flex>
+      </Container>
 
-{/*       {products.map(product => {
+      {products.map(product => {
         return <h2 key={product.id}>{product.title}</h2>
-      })} */}
+      })}
     </main>
 
   )

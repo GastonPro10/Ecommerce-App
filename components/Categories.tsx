@@ -5,7 +5,8 @@ import {Categories} from '@/models/Categories'
 import React from 'react';
 
 
-const LabelCategory = ({label}) => {
+
+const LabelCategory = ({label}:any) => {
     return <Flex display='flex' alignItems='center' justifyContent='center' height='100%' >
       <Box bgColor='white' padding='1rem 1.5rem' position='relative' width='fit-content' zIndex='1' textTransform='uppercase'
     fontWeight='bold' borderRadius='0.25rem'>{label}
@@ -22,7 +23,7 @@ type Props = {
 export default function CategoriesHome(props: Props){
     return(
     <div>
-    <Grid templateColumns='540px 255px 255px' templateRows='200px 260px' gap='1rem'>
+    <Grid templateColumns='540px 255px 255px' templateRows='200px 260px' gap='30px'>
     {props.categories.map((cat, key) => {
       if(key === 0){
         return <GridItem position='relative' w='100%' h='100%' bg='blue.500' rowSpan={2}key={key}><LabelCategory label={cat}/><Image src='/modelo4.jpg' alt='imagen1' fill={true}/></GridItem>
