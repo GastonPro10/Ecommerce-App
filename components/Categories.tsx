@@ -23,7 +23,9 @@ type Props = {
 export default function CategoriesHome(props: Props){
     return(
     <div>
-    <Grid templateColumns='540px 255px 255px' templateRows='200px 260px' gap='30px'>
+    <Grid templateColumns={{
+      base: '1fr 1fr',
+      sm:'540px 255px 255px'}} templateRows='200px 260px' gap='30px'>
     {props.categories.map((cat, key) => {
       if(key === 0){
         return <GridItem position='relative' w='100%' h='100%' bg='blue.500' rowSpan={2}key={key}><LabelCategory label={cat}/><Image src='/modelo4.jpg' alt='imagen1' fill={true}/></GridItem>

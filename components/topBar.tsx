@@ -10,9 +10,9 @@ export default function TopBar(){
             <Flex gap='1.5rem'>
                 <Flex as={Link} href= '#' alignItems='center' gap='0.5rem'><BsFillTelephoneFill size={14}/>553535353</Flex>
 
-                <Flex as={Link} href= '#' alignItems='center' gap='0.5rem'><BsPinMapFill size={14}/>Ubication 1 , 2</Flex>
+                <Flex as={Link} display={{base: 'none', sm: 'flex'}} href= '#' alignItems='center' gap='0.5rem'><BsPinMapFill size={14}/>Ubication 1 , 2</Flex>
 
-                <Flex as={Link} href= '#' alignItems='center' gap='0.5rem'><BsClockFill size={14}/>All Week 24/7</Flex>
+                <Flex as={Link} display={{base: 'none', sm: 'flex'}} href= '#' alignItems='center' gap='0.5rem'><BsClockFill size={14}/>All Week 24/7</Flex>
             </Flex>
             <Flex gap='1rem'>
                 <Link href="#"><RiFacebookCircleLine size={24}/></Link>
